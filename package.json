@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HSEADC/ADC-Code-Tutorial"
+    "url": "git+https://github.com/HSEADC/Synapse-Site.git"
   },
   "keywords": [],
-  "author": "Polina Filacheva, Zakhar Day",
+  "author": "",
   "license": "",
   "bugs": {
-    "url": "https://github.com/HSEADC/ADC-Code-Tutorial/issues"
+    "url": "https://github.com/HSEADC/Synapse-Site/issues"
   },
-  "homepage": "https://github.com/HSEADC/ADC-Code-Tutorial#readme",
+  "homepage": "https://github.com/HSEADC/Synapse-Site#readme",
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
@@ -40,10 +40,7 @@
     "sass-loader": "^11.0.1",
     "webpack": "^5.33.2",
     "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.11.2",
+    "webpack-dev-server": "^4.11.0",
     "webpack-merge": "^5.7.3"
-  },
-  "dependencies": {
-    "highlight.js": "^11.5.0"
   }
 }
