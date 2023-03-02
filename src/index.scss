@@ -4,10 +4,142 @@
 @import 'stylesheets/basics.scss';
 @import 'stylesheets/main.scss';
 
+@font-face {
+    font-family: 'Inter';
+    src: url(fonts/inter.ttf);
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: 'dlig', 'liga', 'calt', 'cv11' on;
+    font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
+    box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+}
+
 body {
     overflow-x: hidden;
 }
-#semicircles {
+
+section {
+    height: 100vh;
+    padding: 0 $body-margin;
+}
+
+.semicircles {
+    position: absolute;
     height: 90vh;
-    margin-top: 5vh;
+    top: 5vh;
+    left: 0;
+    z-index: 1;
+    transform: translateX(-34vh);
+    animation-name: startAnim;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#two {
+    transform: translateX(0vh);
+    animation-name: startAnim;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes startAnim {
+    from {
+         margin-left: 0vh;
+     }
+     to {
+        margin-left: 34vh;
+     }
+ }
+
+
+
+h1 {
+    position: relative;
+    font-size: 140px;
+    line-height: 100%;
+    z-index: 2;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+    font-weight: 450;
+    color: $identity-black;
+}
+
+#start h1 {
+    top: calc(50vh - 210px);
+}
+
+#description {
+    width: 384px;
+    z-index: 20;
+    position: absolute;
+    right: $body-margin;
+    top: calc(50vh - 195px);
+
+    p {
+        margin-bottom: 24px;
+    }
+
+    button {
+        margin-top: 38px;
+        height: 72px;
+        width: 100%;
+        outline: none;
+        border: 0;
+        border-radius: 24px;
+        background-color: $background;
+        transition: all 0.15s ease-in;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $identity-black;
+            color: $background;
+        }
+    }
+}
+
+
+
+p, button {
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.03em;
+    font-weight: 450;
+    color: $identity-black;
+}
+
+#advantages {
+    background-color: $identity-sky;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    justify-content: center;
+
+
+    div {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        border-bottom: 8px solid $identity-black;
+        padding-bottom: 24px;
+        justify-content: space-between;
+
+        h1 {
+            line-height: 120px;
+            position: relative;
+            left: -10px;
+        }
+
+        p {
+            width: 384px;
+            align-self: flex-start;
+            margin-left: 48px;
+            // align-items: flex-end;
+        }
+    }
 }
