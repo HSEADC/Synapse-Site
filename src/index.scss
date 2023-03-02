@@ -3,3 +3,11 @@
 @import 'stylesheets/vars.scss';
 @import 'stylesheets/basics.scss';
 @import 'stylesheets/main.scss';
+
+body {
+    overflow-x: hidden;
+}
+#semicircles {
+    height: 90vh;
+    margin-top: 5vh;
+}
