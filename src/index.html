@@ -52,12 +52,56 @@
 
       </section>
       <section class="email">
+        <div class="starDiv">
+          <img class="star" src="images/star.svg"/>
+        </div>
         <p>Оставьте почту,<br/>чтобы познакомиться<br/>с ally первыми</p>
-        <form>
-          <input type="email" placeholder="Введите почту">
+        <form name="submit-to-google-sheet">
+          <input name="email" type="email" placeholder="Введите почту">
           <input type="submit" value="->">
         </form>
       </section>
+
+      <footer>
+        <div class="flex">
+          <img src="images/logo.svg">
+          <div class="links">
+            <img src="images/email.svg">
+            <img src="images/youtube.svg">
+            <img src="images/instagram.svg">
+          </div>
+        </div>
+        <h2>
+          Бесплатный генератор фирменного стиля и картинок для фондов и НКО
+        </h2>
+        <h2>
+          Ally 2022. Creative Commons BY-NC 
+        </h2>
+        <div class="titres">
+          <div class="titre">
+            <p>создатель</p>
+            <a href="https://vitasiempre.com/" target="_blank">Виталий Гачковский</a>
+          </div>
+          <div class="titre">
+            <p>куратор</p>
+            <a href="https://linktr.ee/zakharday" target="_blank">Захар День</a>
+          </div>
+          <div class="titre">
+            <p>сообщество</p>
+            <a href="https://adc.ac/" target="_blank">HSE Art, Design&Coding</a>
+          </div>
+        </div>
+      </footer>
     
   </body>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyM2Ga0f5wvc5_GaVDqkB6qVN3_kKxx58D_Z3lQVLi-ZqPEATnMi-Q8UMdNBUIlvRfmLQ/exec'
+    const form = document.forms[0]
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 </html>

@@ -203,12 +203,39 @@ h2 {
     height: calc(100vh - 116px);
 }
 
+@keyframes star {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .email {
     background-color: $identity-yellow;
     display: flex;
     flex-direction: column;
     gap: 80px;
     justify-content: center;
+    position: relative;
+
+    .starDiv {
+        position: absolute;
+        top: 0;
+        z-index: 0;
+        height: 330px;
+        overflow: hidden;
+
+        img {
+            position: relative;
+            bottom: 85%;
+            animation: star 240s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    }
 
     p {
         text-transform: uppercase;
@@ -218,12 +245,14 @@ h2 {
         line-height: 110%;
         letter-spacing: -0.06em;
         text-align: center;
+        z-index: 10;
     }
 
     form {
         display: flex;
         flex-direction: row;
         gap: 24px;
+        z-index: 10;
 
         input {
             height: 120px;
@@ -268,3 +297,55 @@ h2 {
         }
     }
 }
+
+footer {
+    padding: $body-margin 0;
+}
+
+.flex {
+    padding: 0 $body-margin;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .links {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 40px;
+        
+    }
+}
+
+.titres {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+    padding: 0 $body-margin;
+    margin-top: 80px;
+
+    .titre {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        flex-basis: 34%;
+    
+        p {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 110%;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+        }
+    
+        a {
+            color: $identity-black;
+            font-weight: 450;
+            font-size: 36px;
+            line-height: 110%;
+            letter-spacing: -0.04em;
+        }
+    }
+}
+
