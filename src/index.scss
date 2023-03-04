@@ -143,3 +143,128 @@ p, button {
         }
     }
 }
+
+h2 {
+    font-weight: 450;
+    font-size: 72px;
+    line-height: 110%;
+    letter-spacing: -0.04em;
+    margin: 96px 0 -14px $body-margin;
+    color: $identity-black;
+}
+
+.howItWorks {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    justify-content: center;
+    p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        background-color: $background;
+        border-radius: 90px;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 110%;
+    }
+    
+    h3 {
+        font-size: 72px;
+        line-height: 110%;
+        font-weight: 450;
+        letter-spacing: -0.06em;
+        color: $identity-black;
+        width: 800px;
+    }
+
+    img {
+        position: absolute;
+        right: 32px;
+    }
+
+    &#create {
+        background-color: $identity-pink;
+    }
+
+    &#choose {
+        background-color: $identity-yellow;
+    }
+
+    &#insert {
+        background-color: $identity-sky;
+    }
+}
+
+.examples {
+    background-color: $identity-pink;
+    height: calc(100vh - 116px);
+}
+
+.email {
+    background-color: $identity-yellow;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    justify-content: center;
+
+    p {
+        text-transform: uppercase;
+        color: $identity-black;
+        font-weight: 450;
+        font-size: 96px;
+        line-height: 110%;
+        letter-spacing: -0.06em;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+
+        input {
+            height: 120px;
+            width: 100%;
+            border: 0;
+            outline: none;
+            padding: 0 32px;
+            border-radius: 24px;
+
+            &[type=email], &[type=submit]  {
+                font-size: 72px;
+                letter-spacing: -0.04em;
+                color: $identity-black;
+                transition: $hover-transition;
+
+                &::placeholder {
+                    color: $identity-gray;
+                }
+            }
+
+            &[type=email] {
+                &:hover, &:focus {
+                    outline: 3px solid $identity-black;
+                }
+            }
+
+            &[type=submit] {
+                background-color: $identity-black;
+                color: $background;
+                width: 120px;
+                display: flex;
+                padding-bottom: 8px;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $identity-sky;
+                    color: $identity-black;
+                }
+            }
+        }
+    }
+}
