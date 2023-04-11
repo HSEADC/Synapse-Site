@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ru" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <title>Ally</title>
@@ -62,10 +62,25 @@
           <img class="star" src="images/star.svg"/>
         </div>
         <p>Оставьте почту,<br/>чтобы познакомиться<br/>с ally первыми</p>
-        <form name="submit-to-google-sheet">
+        <!-- <form name="submit-to-google-sheet">
           <input name="email" type="email" placeholder="Введите почту">
           <input type="submit" value="->">
-        </form>
+        </form> -->
+
+          <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/398270/forms/85147609808766635/subscribe" data-code="" method="post" target="_blank">
+            <input type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+                  <!-- <button type="submit" class="primary">Subscribe</button> -->
+            <input type="hidden" name="ml-submit" value="1">
+            <input type="submit" value="->">
+            <input type="hidden" name="anticsrf" value="true">
+          </form>
+
+        <div class="ml-form-successBody row-success" style="display: none">
+          <div class="ml-form-successContent">
+              <h4>Thank you!</h4>
+                <p>You have successfully joined our subscriber list.</p>
+        </div>
+
       </section>
 
       <footer>
@@ -100,7 +115,7 @@
       </footer>
     
   </body>
-  <script>
+  <!-- <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyM2Ga0f5wvc5_GaVDqkB6qVN3_kKxx58D_Z3lQVLi-ZqPEATnMi-Q8UMdNBUIlvRfmLQ/exec'
     const form = document.forms[0]
     form.addEventListener('submit', e => {
@@ -109,5 +124,27 @@
         .then(response => console.log('Success!', response))
         .catch(error => console.error('Error!', error.message))
     })
-  </script>
+  </script> -->
+
+  
+  
+
+
+
+
+
+<script>
+  function ml_webform_success_4521730() {
+    var $ = ml_jQuery || jQuery;
+    $('.ml-subscribe-form-4521730 .row-success').show();
+    $('.ml-subscribe-form-4521730 .row-form').hide();
+  }
+    </script>
+
+
+    <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v59ea44790c5c0deef53b8c1ad21b8cc9" type="text/javascript"></script>
+      <script>
+          fetch("https://assets.mailerlite.com/jsonp/398270/forms/85147609808766635/track-view")
+      </script>
+
 </html>
