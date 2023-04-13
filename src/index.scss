@@ -4,14 +4,9 @@
 @import 'stylesheets/basics.scss';
 @import 'stylesheets/main.scss';
 
-@font-face {
-    font-family: 'Inter';
-    src: url(fonts/inter.ttf);
-}
-
 * {
-    font-family: 'Inter', sans-serif;
-    font-feature-settings: 'dlig', 'liga', 'calt', 'cv11' on;
+    font-family: 'Inter', sans-serif !important;
+    font-feature-settings: 'dlig', 'liga', 'calt', 'cv11' on !important;
     font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
     box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -32,7 +27,7 @@ section {
     height: 90vh;
     top: 5vh;
     left: 0;
-    z-index: 1;
+    z-index: 0;
     transform: translateX(-34vh);
     animation-name: startAnim;
     animation-duration: 10s;
@@ -65,43 +60,59 @@ h1 {
     line-height: 100%;
     z-index: 2;
     letter-spacing: -0.08em;
-    text-transform: uppercase;
     font-weight: 450;
+    text-transform: uppercase;
     color: $identity-black;
 }
 
-#start h1 {
-    top: calc(50vh - 210px);
-}
+#start {
+    position: relative;
+    height: 100vh;
 
-#description {
-    width: 384px;
-    z-index: 20;
-    position: absolute;
-    right: $body-margin;
-    top: calc(50vh - 195px);
-
-    p {
-        margin-bottom: 24px;
+    .center-wrapper {
+        height: 260px;
+        top: calc(50vh);
+        transform: translateY(-50%);
+        position: relative;
+    }
+    
+    h2 {
+        position: absolute;
+        width: 60%;
+        top: 0;
     }
 
-    button {
-        margin-top: 38px;
-        height: 72px;
-        width: 100%;
-        outline: none;
-        border: 0;
-        border-radius: 24px;
-        background-color: $background;
-        transition: all 0.15s ease-in;
-        cursor: pointer;
+    #logo {
+        position: absolute;
+        height: 46px;
+        top: -96px;
+    }
 
-        &:hover {
-            background-color: $identity-black;
-            color: $background;
+    #description {
+        width: 384px;
+        z-index: 20;
+        position: absolute;
+        right: 0;
+        top: 8px;
+    
+        p {
+            margin-bottom: 24px;
+        }
+    
+        #scroll-icon {
+            border-radius: 50%;
+            background: $background;
+            height: 80px;
+            width: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
     }
 }
+
+
 
 
 
@@ -145,12 +156,13 @@ p, button {
 }
 
 h2 {
-    font-weight: 450;
-    font-size: 72px;
-    line-height: 110%;
-    letter-spacing: -0.04em;
-    margin: 96px 0 -14px $body-margin;
-    color: $identity-black;
+    text-transform: none;
+        font-size: 72px;
+        line-height: 100%;
+        z-index: 2;
+        letter-spacing: -0.04em;
+        font-weight: 450;
+        color: $identity-black;
 }
 
 .howItWorks {
