@@ -4,6 +4,10 @@
 @import 'stylesheets/basics.scss';
 @import 'stylesheets/main.scss';
 
+:root {
+    --body-margin: 7vw;
+}
+
 * {
     font-family: 'Inter', sans-serif !important;
     font-feature-settings: 'dlig', 'liga', 'calt', 'cv11' on !important;
@@ -18,8 +22,10 @@ body {
 }
 
 section {
+    overflow: hidden;
+    // width: 100vw;
     height: 100vh;
-    padding: 0 $body-margin;
+    padding: 0 var(--body-margin);
 }
 
 .semicircles {
@@ -65,6 +71,8 @@ h1 {
     color: $identity-black;
 }
 
+
+
 #start {
     position: relative;
     height: 100vh;
@@ -80,6 +88,9 @@ h1 {
         position: absolute;
         width: 60%;
         top: 0;
+        margin: 0;
+        line-height: 68px;
+
     }
 
     #logo {
@@ -93,17 +104,25 @@ h1 {
         z-index: 20;
         position: absolute;
         right: 0;
-        top: 8px;
+        top: 16px;
     
         p {
-            margin-bottom: 24px;
+            margin-bottom: 16px;
+
+            a, a:visited {
+                color: $identity-black;
+    
+                &:hover {
+                    color: $link;
+                }
+            }
         }
     
         #scroll-icon {
             border-radius: 50%;
             background: $background;
-            height: 80px;
-            width: 80px;
+            height: 64px;
+            width: 64px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -113,6 +132,25 @@ h1 {
 }
 
 
+.cursor {
+    display: inline-block;
+    background-color: $identity-black;
+    transform: translateY(5%) scaleY(150%);
+    margin-left: 0.1rem;
+    width: 4px;
+    animation: blink 1s infinite;
+    height: 48px;
+  }
+  .cursor.typing {
+    animation: none;
+  }
+  @keyframes blink {
+    0%  { background-color: $identity-black; }
+    49% { background-color: $identity-black; }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100%  { background-color: $identity-black; }
+  }
 
 
 
@@ -152,6 +190,11 @@ p, button {
             margin-left: 48px;
             // align-items: flex-end;
         }
+
+        &:last-of-type {
+            border: 0;
+            padding-bottom: 0;
+        }
     }
 }
 
@@ -163,6 +206,7 @@ h2 {
         letter-spacing: -0.04em;
         font-weight: 450;
         color: $identity-black;
+        margin: 96px 0 -10px var(--body-margin);
 }
 
 .howItWorks {
@@ -170,6 +214,12 @@ h2 {
     flex-direction: column;
     gap: 48px;
     justify-content: center;
+
+
+    .mobile {
+        display: none;
+    }
+
     p {
         display: flex;
         justify-content: center;
@@ -253,7 +303,7 @@ h2 {
     background-color: $identity-yellow;
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 64px;
     justify-content: center;
     position: relative;
 
@@ -284,62 +334,82 @@ h2 {
         z-index: 10;
     }
 
-    form {
-        display: flex;
-        flex-direction: row;
-        gap: 24px;
-        z-index: 10;
+    #mc-embedded-subscribe-form{
+        width: 30vw;
+        margin: 0 calc(50vw - var(--body-margin) - 15vw);
+    }
 
-        input {
-            height: 120px;
-            width: 100%;
-            border: 0;
-            outline: none;
-            padding: 0 32px;
-            border-radius: 24px;
+    [type="email"] {
+        background-color: $background;
+        height: 64px;
+        border: 3px solid transparent;
+        outline: 0;
+        border-radius: 16px;
+        width: 100%;
+        margin: 0 auto;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 450;
+        font-size: 24px;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        font-feature-settings: 'cv01' on, 'cv11' on;
+        color: $identity-black;
+        padding: 0 16px;
+        margin-bottom: 8px;
+        transition: $hover-transition;
 
-            &[type=email], &[type=submit]  {
-                font-size: 72px;
-                letter-spacing: -0.04em;
-                color: $identity-black;
-                transition: $hover-transition;
+        &:hover {
+            border: 3px solid $dividers;
+        }
 
-                &::placeholder {
-                    color: $identity-gray;
-                }
-            }
+        &:focus {
+            border: 3px solid $identity-black;
+        }
 
-            &[type=email] {
-                &:hover, &:focus {
-                    outline: 3px solid $identity-black;
-                }
-            }
-
-            &[type=submit] {
-                background-color: $identity-black;
-                color: $background;
-                width: 120px;
-                display: flex;
-                padding-bottom: 8px;
-                justify-content: center;
-                align-items: center;
-                cursor: pointer;
-
-                &:hover {
-                    background-color: $identity-sky;
-                    color: $identity-black;
-                }
-            }
+        &::placeholder {
+            color: $identity-gray;
         }
     }
+
+    [type="submit"] {
+        background-color: $identity-black;
+        height: 64px;
+        border: 0;
+        outline: 0;
+        border-radius: 16px;
+        width: 100%;
+        margin: 0 auto;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 450;
+        font-size: 24px;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        font-feature-settings: 'cv01' on, 'cv11' on;
+        color: $background;
+        padding: 0 24px;
+        transition: $hover-transition;
+        cursor: pointer;
+
+        &:hover {
+            background: $identity-sky;
+            color: $identity-black;
+        }
+    }
+
 }
 
 footer {
-    padding: $body-margin 0;
+    padding: var(--body-margin) 0;
+
+    h2 {
+        margin: 64px var(--body-margin);
+    }
 }
 
 .flex {
-    padding: 0 $body-margin;
+    padding: 0 var(--body-margin);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -358,7 +428,7 @@ footer {
     flex-direction: row;
     gap: 24px;
     width: 100%;
-    padding: 0 $body-margin;
+    padding: 0 var(--body-margin);
     margin-top: 80px;
 
     .titre {
@@ -389,3 +459,164 @@ footer {
     }
 }
 
+@media (max-width: 500px) {
+    :root {
+        --body-margin: 32px;
+    }
+
+    h2 {
+        font-size: 30px;
+        line-height: 32px;
+        width: 100%;
+        text-transform: uppercase;
+        margin-bottom: -6px;
+        margin-top: calc(var(--body-margin) * 2);
+    }
+
+    #start {
+
+        h2 {
+            font-size: 30px !important;
+            line-height: 32px !important;
+            width: 100% !important;
+            text-transform: none;
+        }
+        .cursor {
+            height: 20px;
+        }
+
+        #logo {
+            height: 36px;
+            top: -68px;
+        }
+
+        .semicircles {
+            height: 406px;
+            margin-left: -80%;
+            transform: translateX(36%);
+            // animation: none;
+            animation-duration: 4s;
+        }
+
+        #two {
+            transform: translateX(36%);
+            margin-top: 100px;
+            // animation-duration: 1s;
+            // display: none;
+
+        }
+
+        @keyframes startAnim {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(12%);
+            }
+        }
+
+        #description {
+            position: relative;
+            top: 308px;
+            width: 100%;
+
+            p {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 450;
+                font-size: 16px;
+                line-height: 20px;
+                letter-spacing: -0.03em;
+            }
+
+            .center-wrapper {
+                top: 0;
+                transform: translateY(0%);
+                position: relative;
+            }
+
+            #scroll-icon {
+                background: $identity-yellow;
+                margin-top: 32px;
+            }
+        }
+    }
+
+    #advantages {
+        h1 {
+            font-size: 48px;
+            letter-spacing: -0.05em;;
+        }
+
+        img {
+            display: none;
+        }
+
+        div {
+            flex-direction: column;
+            padding-bottom: 24px;
+            border-bottom-width: 4px;
+            gap: 12px;
+
+            h1 {
+                left: 0;
+                line-height: 48px;
+            }
+
+            p {
+                margin: 0;
+                width: 100%;
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+    }
+
+
+    .howItWorks {
+        padding-top: 96px;
+        justify-content: flex-start;
+        gap: 24px;
+
+        .howImage {
+            display: none;
+        }
+
+        .mobile {
+            display: block;
+            position: relative;
+            height: 164px;
+            margin-top: 64px;
+
+            .howImage {
+                width: 100vw;
+                left: calc(var(--body-margin) * -1);
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                // margin-left: auto;
+                // margin-right: auto;
+                // transform: translateX(-50%);
+            }
+        }
+
+        .order {
+            width: 28px;
+            height: 28px;
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 30px !important;
+            line-height: 32px !important;
+            width: 100% !important;
+            text-transform: none;
+            letter-spacing: -0.04em;
+        }
+    }
+
+    .examples, #email, footer {
+        display: none;
+    }
+
+}
