@@ -7,7 +7,7 @@ const cursorSpan = document.querySelector(".cursor");
 const textArray = ["фирменный стиль", "дизайн соцсетей", "визитку", "красоту"];
 const typingDelay = 100;
 const erasingDelay = 60;
-const newTextDelay = 1500; // Delay between current and next text
+const newTextDelay = 2000; // Delay between current and next text
 
 let textArrayIndex = 0;
 let charIndex = 15;
