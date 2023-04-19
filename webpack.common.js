@@ -2,6 +2,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 const webpack = require('webpack')
 const path = require('path')
@@ -74,7 +75,11 @@ module.exports = {
         options: {
           name: 'fonts/[name].[ext]'
         }
-      }
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+       }
     ]
   },
   plugins: [
@@ -82,6 +87,13 @@ module.exports = {
       filename: '[name].css',
       chunkFilename: '[id].css'
     }),
+
+
+
+    new CopyPlugin({
+      patterns: [{ from: 'src/fonts', to: 'fonts' }]
+    }),
+
 
     // Index
     new HtmlWebpackPlugin({
