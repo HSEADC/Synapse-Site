@@ -383,7 +383,7 @@ h2 {
         }
     }
 
-    [type="submit"] {
+    [type="submit"], #mc_embed_signup .button, #mc-embedded-subscribe {
         background-color: $identity-black;
         height: 64px;
         border: 0;
@@ -620,7 +620,7 @@ footer {
             margin: 0 calc(50vw - var(--body-margin) - 20vw);
         }
 
-        [type="submit"], [type="email"] {
+        [type="submit"], [type="email"], #mc_embed_signup .button, #mc-embedded-subscribe {
             font-size: 30px;
         }
 
@@ -893,7 +893,7 @@ footer {
             margin: 0 calc(50vw - var(--body-margin) - 33vw);
         }
 
-        [type="submit"], [type="email"] {
+        [type="submit"], [type="email"], #mc_embed_signup .button, #mc-embedded-subscribe {
             font-size: 30px;
         }
 
@@ -1181,7 +1181,7 @@ footer {
             margin: 0;
         }
 
-        [type="submit"], [type="email"] {
+        [type="submit"], [type="email"], #mc_embed_signup .button, #mc-embedded-subscribe {
             font-size: 16px;
             height: 60px;
         }
