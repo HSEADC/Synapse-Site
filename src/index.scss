@@ -334,6 +334,18 @@ h2 {
         }
     }
 
+    .response {
+        letter-spacing: -0.03em;
+        font-weight: 450;
+        color: $identity-black;
+        background: $background;
+        padding: 16px;
+        border-radius: 16px;
+        margin: 0 0 8px;
+        text-align: center;
+        font-size: 16px;
+    }
+
     p {
         text-transform: uppercase;
         color: $identity-black;
