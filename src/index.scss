@@ -318,6 +318,16 @@ h2 {
     justify-content: center;
     position: relative;
 
+    .response {
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.03em;
+    font-weight: 450;
+    color: $identity-black;
+    padding: 8px 0 24px 0;
+    text-align: center;
+    }
+
     .starDiv {
         position: absolute;
         top: 0;
@@ -615,6 +625,16 @@ footer {
             margin: 0 auto;
         }
 
+        .response {
+            font-size: 24px;
+            line-height: 29px;
+            letter-spacing: -0.03em;
+            font-weight: 450;
+            color: $identity-black;
+            padding: 8px 0 24px 0;
+            text-align: center;
+            }
+
         #mc-embedded-subscribe-form{
             width: 40vw;
             margin: 0 calc(50vw - var(--body-margin) - 20vw);
@@ -887,6 +907,16 @@ footer {
             width: auto;
             margin: 0 auto;
         }
+
+        .response {
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: -0.03em;
+            font-weight: 450;
+            color: $identity-black;
+            padding: 8px 0 24px 0;
+            text-align: center;
+            }
 
         #mc-embedded-subscribe-form{
             width: 66vw;
