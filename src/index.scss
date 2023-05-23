@@ -276,16 +276,23 @@ h2 {
         padding: 0;
         
         .exampleImg {
-            height: calc((90vh - 24px) / 2 - 24px);
-            width: 80vw;
+            // height: calc((90vh - 24px) / 2 - 24px);
+            height: calc(90vh - 24px * 2);
+            width: 700px !important;
             z-index: 0;
             animation-name: examples;
-            animation-duration: 20s;
+            animation-duration: 18s;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
             margin: auto 0;
-            object-fit:cover;
+            object-fit: cover;
         }
+
+        &:last-of-type {
+            display: none;
+        }
+
+    
     
     
 }}
@@ -296,7 +303,7 @@ h2 {
     }
 
     to {
-        transform: translateX(calc(((90vh - 24px) / 2 - 24px) * -4.25));
+        transform: translateX(calc((90vh - 24px * 2) * -5.11));
     }
 }
 
@@ -891,6 +898,30 @@ footer {
         }
     }
 
+    .examples {
+        div {
+            .exampleImg {
+                height: calc((90vh - 24px) / 2 - 24px);
+                animation-duration: 20s;
+            }
+
+            &:last-of-type {
+                display: flex;
+            }
+        }
+        
+    }
+
+    @keyframes examples {
+        from {
+            transform: translateX(0);
+        }
+    
+        to {
+            transform: translateX(calc(((90vh - 24px) / 2 - 24px) * -5.65));
+        }
+    }
+
     #email {
         p {
             font-size: 48px;
@@ -1161,11 +1192,6 @@ footer {
             letter-spacing: -0.04em;
         }
     }
-
-    // .examples div .exampleImg {
-    //     height: 50vw;
-    //     width: 50vw;
-    // }
 
 
     #email {
