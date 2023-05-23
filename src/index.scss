@@ -18,7 +18,7 @@
 }
 
 body {
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 a, a * {
@@ -26,8 +26,8 @@ a, a * {
 }
 
 section {
-    overflow: hidden;
-    // width: 100vw;
+    overflow: hidden !important;
+    width: 100vw;
     height: 100vh;
     padding: 0 var(--body-margin);
 }
@@ -902,7 +902,7 @@ footer {
         div {
             .exampleImg {
                 height: calc((90vh - 24px) / 2 - 24px);
-                animation-duration: 20s;
+                animation-duration: 35s;
             }
 
             &:last-of-type {
